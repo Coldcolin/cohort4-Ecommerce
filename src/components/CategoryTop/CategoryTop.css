@@ -1,0 +1,15 @@
+.CategoryTopContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45vh;
+    padding-inline: 40px;
+    margin-top: 1%;
+    background-color: #E6EFEE;
+}
+.CategoryTopContainer img{
+    width: 50%;
+    height: 80%;
+    object-fit: contain;
+}

@@ -1,0 +1,49 @@
+.CategoryHolders {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.CategoryItemsHolder{
+    width: 100%;
+    height: auto;
+    min-height: 30vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    justify-content: center;
+}
+
+@media screen and (width <= 1920px) {
+    .CategoryItemsHolder{
+        gap: 50px;
+    }
+}
+@media screen and (width <= 1804px){
+    .CategoryItemsHolder{
+        gap: 40px;
+    }
+}
+@media screen and (width <= 1680px){
+    .CategoryItemsHolder{
+        gap: 30px;
+    }
+}
+@media screen and (width <= 1600px){
+    .CategoryItemsHolder{
+        gap: 40px;
+    }
+}
+@media screen and (width <= 1400px){
+    .CategoryItemsHolder{
+        gap: 30px;
+    }
+}
+@media screen and (width <= 1280px){
+    .CategoryItemsHolder{
+        gap: 25px;
+    }
+}

@@ -1,0 +1,56 @@
+.BodyContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 40px;
+    margin-top: 20px;
+}
+.BodyContainer h3{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    /* background-color: aqua; */
+}
+.BodyCardHolder{
+    width: 100%;
+    height: auto;
+    min-height: 30vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    justify-content: center;
+}
+
+@media screen and (width <= 1920px) {
+    .BodyCardHolder{
+        gap: 50px;
+    }
+}
+@media screen and (width <= 1804px){
+    .BodyCardHolder{
+        gap: 40px;
+    }
+}
+@media screen and (width <= 1680px){
+    .BodyCardHolder{
+        gap: 30px;
+    }
+}
+@media screen and (width <= 1600px){
+    .BodyCardHolder{
+        gap: 40px;
+    }
+}
+@media screen and (width <= 1400px){
+    .BodyCardHolder{
+        gap: 30px;
+    }
+}
+@media screen and (width <= 1280px){
+    .BodyCardHolder{
+        gap: 25px;
+    }
+}

@@ -1,0 +1,65 @@
+.HeaderContainer {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 40px;
+    align-items: center;
+}
+.HeaderLogo{
+    width: 7%;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+
+    & img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+.HeaderNav ul{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    cursor: pointer;
+}
+.HeaderAccount {
+    width: 150px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+.HeaderBurger{
+    display: none;
+}
+.HeaderActive{
+    text-decoration: none;
+    color: #025949;
+    font-size: 18px;
+    font-weight: 700;
+}
+.HeaderNotActive{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+@media screen and (width <= 520px){
+    .HeaderBurger{
+        display: block;
+    }
+    .HeaderNav{
+        display: none;
+    }
+    .HeaderAccount{
+        display: none;
+    }
+    .HeaderLogo{
+        width: 25%;
+        height: 40px;
+    }
+}
