@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Card from "../../../components/card/Card"
 import "./body.css";
 import axios from "axios"
+import {EcommerceContext} from "../../../api/contextApi"
 
 const Body = () => {
+  const {cart}= useContext(EcommerceContext);
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -18,7 +20,7 @@ const Body = () => {
     }
   }
   useEffect(()=>{
-    getCategories()
+    getCategories();
   },[])
   
   return (
@@ -28,7 +30,7 @@ const Body = () => {
           loading? <div className="BodyCardHolder">Loading...</div>:<div className="BodyCardHolder">
           {
             items.map((e)=>(
-              <Card id={e?.id} details={e}/>
+              <Card key={e?.id} id={e?.id} details={e}/>
             ))
           }
           </div>

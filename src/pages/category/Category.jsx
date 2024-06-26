@@ -30,7 +30,7 @@ const Category = () => {
         {
           loading? <div className="CategoryItemsHolder">Loading...</div>:<div className="CategoryItemsHolder">
           {
-              items.map((e) => (<Items id={e?.id} details={e}/>))
+              items.length !== 0?items.map((e) => (<Items key={e?.id} id={e?.id} details={e}/>)): <div>Empty</div>
           }
           </div>
         }

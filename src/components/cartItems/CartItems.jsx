@@ -1,22 +1,25 @@
 import sale from "../../assets/sale.jpeg"
 import "./cartItems.css"
+import { EcommerceContext } from "../../api/contextApi"
+import { useContext } from "react"
 
-const CartItems = ({key}) => {
+const CartItems = ({info}) => {
+    const {dispatch} = useContext(EcommerceContext)
   return (
-    <div key={key} className="CartItemContainer">
+    <div key={info?.id} className="CartItemContainer">
         <div className="CartItemImage">
-            <img src={sale} alt="sale"/>
+            <img src={info?.images?.[0]} alt="sale"/>
         </div>
         <div className="CartDetails">
-            <h3>Big Bag</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nobis repellendus et voluptate nam cumque doloremque labore autem, soluta hic?</p>
+            <h3>{info?.title}</h3>
+            <p>{info?.description}</p>
             <div className="CartItemsInfo">
-                <p>#4500</p>
+                <p>#{info?.price}</p>
                 <button className="CartItemDelete">Delete</button>
                 <div className="CartActions">
-                    <button>-</button>
-                    <p>1</p>
-                    <button>+</button>
+                    <button onClick={()=> dispatch({type: "decrease QTY", payload:{id: info?.id}})}>-</button>
+                    <p>{info?.QTY}</p>
+                    <button onClick={()=> dispatch({type: "increase QTY", payload:{id: info?.id}})}>+</button>
                 </div>
             </div>
         </div>

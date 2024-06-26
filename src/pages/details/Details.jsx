@@ -2,11 +2,12 @@ import Header from "../../components/Header/Header"
 import "./details.css";
 import theImage from "../../assets/sale.jpeg"
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import axios from "axios";
-import Items from "../../components/items/Items";
+import { EcommerceContext } from "../../api/contextApi";
 
 const Details = () => {
+  const {dispatch} = useContext(EcommerceContext)
   const {id}= useParams()
     const [item, setItem] = useState({});
     const [loading, setLoading] = useState(false);
@@ -31,7 +32,7 @@ const Details = () => {
             <div className="DetailsImage">
                 <img src={item?.images?.[0]} alt="detail Image"/>
             </div>
-            <button className="DetailButton">Add to Cart</button>
+            <button className="DetailButton" onClick={()=> dispatch({type: "addToCart", payload: item})}>Add to Cart</button>
             <div className="DetailsDetails">
                 <h1>{item.title}</h1>
                 <div>

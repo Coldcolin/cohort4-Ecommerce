@@ -1,4 +1,3 @@
-import Header from "../../components/Header/Header";
 import Hero from "./Hero/Hero";
 import "./Home.css"
 import Body from "./body/Body";

@@ -1,19 +1,23 @@
 import CartItems from "../../components/cartItems/CartItems";
 import "./cart.css"
+import { useContext, useEffect } from "react";
+import { EcommerceContext } from "../../api/contextApi";
 
 const Cart = () => {
-    const cartItems = Array(5).fill(0).map((_, i) => i + 1);
+    const {cart, dispatch, total} = useContext(EcommerceContext)
+    const cartItems = cart;
+    
   return (
     <div className="CartContainer">
         <div className="CartInfo">
-            <div>Total: #80000</div>
+            <div>Total: #{total}</div>
             <div className="CartClear">Clear Cart</div>
-            <div>Total Quantity: 10</div>
+            <div>Total Quantity: {cart.length}</div>
         </div>
         <div className="CartHolder">
             {
-                cartItems.map((e, i)=>(
-                    <CartItems key={i}/>
+                cartItems.map((e)=>(
+                    <CartItems key={e?.id} info={e}/>
                 ))
             }
         </div>
